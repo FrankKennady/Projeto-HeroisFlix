@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heróis Filmes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- NAVEGAÇÃO: Barra superior com logo e campo de busca -->
+    <nav>
+        <!-- Link que envolve o logo para recarregar a página inicial -->
+        <a href="./index.html">
+            <!-- Imagem do logo definida no FK Design -->
+            <img class="logo" src="./assets/heroisflix.png" alt="logo">
+        </a>
+
+        <!-- Bloco de pesquisa para interação do usuário -->
+        <div class="search-box">
+            <!-- O evento 'onkeyup' aciona a função filtrar() a cada tecla digitada -->
+            <input type="text" id="inputBusca" placeholder="Nome da série ou filme" onkeyup="filtrar()">
+        </div>
+    </nav>
+
+    <header>
+        <!-- SEÇÃO HERO (TRAILER): Destaque principal em tela cheia -->
+        <section class="movie-trailer">
+            <!-- O atributo 'muted' é necessário para o 'autoplay' funcionar na maioria dos navegadores -->
+            <!-- O ID 'main-video' é usado pelo script para trocar os vídeos em sequência -->
+            <video id="main-video" src="./assets/trailer1.mp4" type="video/mp4" autoplay muted controls></video>
+
+            <!-- Informações sobrepostas ao vídeo de destaque -->
+            <div class="trailer-info">
+                <h2>Vingadores: Doomsday</h2> <!-- Título fixo conforme sua preferência -->
+                <p>
+                    O novo capítulo da saga começa aqui.
+                    <br>
+                    Estreia 18 de dezembro de 2026.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE CATÁLOGO: Onde os cards dos filmes aparecem -->
+        <section class="catalog">
+            <h2 class="titulo-categoria">Filmes do Universo Marvel</h2>
+            
+            <!-- Este ID 'marvel-catalog' é o alvo onde o JavaScript injeta o HTML dos cards -->
+            <div id="marvel-catalog">
+                <!-- O conteúdo aqui é gerado dinamicamente pela função exibirFilmes() -->
+            </div>
+        </section>
+    </header>
+
+    <!-- RODAPÉ: Informações de copyright e autoria -->
+    <footer>
+        <p>&copy; 2026 HeróisFlix - Desenvolvido por Frank Kennady</p>
+    </footer>
+
+</body>
+
+</html>

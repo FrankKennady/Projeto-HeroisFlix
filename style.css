@@ -1,0 +1,280 @@
+/* RESET GLOBAL: Remove margens e paddings padrão de todos os navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Garante que bordas e preenchimentos não aumentem o tamanho dos elementos */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* CORPO DA PÁGINA: Define o fundo escuro característico e cor do texto clara */
+body {
+    background-color: #141414;
+    color: #ffffff;
+}
+
+/* CABEÇALHO: Fundo totalmente preto para destacar o logo e a navegação */
+header {
+    background-color: #000000;
+}
+
+/* LOGO: Ajuste de tamanho e espaçamento superior */
+.logo {
+    width: 150px;
+    border: none;
+    margin-top: 5px;
+}
+
+/* NAVEGAÇÃO: Alinha itens horizontalmente no centro com espaçamento entre eles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* CAIXA DE BUSCA: Posicionamento do input de pesquisa */
+.search-box {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+/* INPUT DE BUSCA: Estilização arredondada e escura para o campo de texto */
+.search-box input {
+    background: #333;
+    border: 1px solid #444;
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    outline: none;
+}
+
+/* TRAILER: Container que ocupa 60% da altura da tela (Hero Section) */
+.movie-trailer {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* VÍDEO DO TRAILER: Preenche todo o container sem distorcer a imagem */
+.movie-trailer video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFORMAÇÕES DO TRAILER: Texto posicionado sobre o vídeo no canto inferior esquerdo */
+.trailer-info {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    color: #fff;
+    z-index: 2;
+}
+
+/* DETALHE VISUAL: Linha vermelha temática na base do trailer */
+.movie-trailer::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ed1d24;
+}
+
+/* BARRA DE CATÁLOGO: Fica fixa no topo ao rolar a página (Sticky) */
+.catalog {
+    background-color: #000000;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* TÍTULO DA CATEGORIA: Estilo Marvel com borda lateral vermelha e letras maiúsculas */
+.titulo-categoria {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 20px 4% 10px;
+    padding-left: 10px;
+    border-left: 4px solid #e62429;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* DECORAÇÃO DO TÍTULO: Linha com degradê que se estende após o nome da categoria */
+.titulo-categoria::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(to right, #e62429, transparent);
+    margin-left: 20px;
+}
+
+/* GRID DE FILMES: Organiza os cards automaticamente conforme o tamanho da tela */
+div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px;
+    padding: 10px 0;
+    overflow-x: auto;
+}
+
+/* CARD DO FILME: Design do card com transição suave para o efeito de zoom */
+.card {
+    background: #2f2f2f;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* EFEITO HOVER: Aumenta levemente o card quando o mouse passa por cima */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* IMAGEM DO CARD: Mantém a proporção e altura fixa para as capas dos filmes */
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* CONTEÚDO DO CARD: Espaçamento interno para os textos */
+.card-content {
+    padding: 10px;
+    width: 100%;
+}
+
+/* TÍTULO DO FILME NO CARD: Destaque em vermelho */
+.card-content h3 {
+    font-size: 18px;
+    width: 100%;
+    margin-bottom: 8px;
+    color: #e62429;
+}
+
+.card-content h5 {
+    font-size: 12px;
+    width: 100%;
+}
+
+/* TEXTO DA SÍNTESE: Tamanho reduzido e limite de altura para não quebrar o layout */
+.card-content p {
+    font-size: 10px;
+    color: #ccc;
+    line-height: 1.4;
+    width: 90%;
+    height: 70px;
+    overflow: hidden;
+}
+
+/* BOTÃO ASSISTIR: Estilo chamativo em vermelho com largura total */
+.btn-assistir {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 10px;
+    background-color: #e62429;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+}
+
+/* HOVER DO BOTÃO: Escurece o vermelho ao passar o mouse */
+.btn-assistir:hover {
+    background-color: #b31d22;
+}
+
+/* RODAPÉ: Simples e centralizado no final da página */
+footer {
+    background-color: #141414;
+    margin: 5px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+/*RESPONSIVIDADE PARA CELULARES*/
+@media (max-width: 378px) {
+    .trailer-info {
+        position: absolute;
+        bottom: 70px;
+        left: 15px;
+        color: #ffffff;
+        font-size: 16px;
+        z-index: 2;
+    }
+}
+
+div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    padding: 10px 0;
+    overflow-x: auto;
+}
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+
+
+@media (max-width: 378px) {
+    .logo {
+        width: 100px;
+        border: none;
+        margin-top: 5px;
+    }
+
+    .search-box input {
+        background: #333;
+        border: 1px solid #444;
+        color: #ffffff;
+        padding: 8px 10px;
+        border-radius: 20px;
+        outline: none;
+    }
+
+    div {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 8px;
+        padding: 10px 0;
+        overflow-x: auto;
+    }
+
+    .trailer-info {
+        position: absolute;
+        bottom: 60px;
+        left: 15px;
+        color: #fff;
+        z-index: 2;
+    }
+
+    .card img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+
+}
