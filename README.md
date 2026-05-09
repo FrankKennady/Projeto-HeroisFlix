@@ -7,7 +7,7 @@ Uma plataforma interativa inspirada no universo Marvel, desenvolvida para aprese
 ## 📷 Preview do Projeto
 Aqui está o resultado final da interface em diferentes dispositivos:
 
-<img width="1536" height="1024" alt="Preview do Projeto" src="https://github.com/user-attachments/assets/projeto-heroi-flix" />
+<img width="1536" height="1024" alt="Preview do Projeto" src="https://github.com/FrankKennady/Projeto-HeroisFlix/blob/main/assets/projeto-herois-flix.png"/> 
 <br>
 
 ---
